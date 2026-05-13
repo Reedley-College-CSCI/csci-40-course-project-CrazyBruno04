@@ -21,6 +21,15 @@ string race;
 string characterClass;
 string background;
 
+// Character Stats
+int strength;
+int intelligence;
+int dexterity;
+int wisdom;
+int constitution;
+int charisma;
+int experiencePoints;
+int level;
 
 
 int main() {
