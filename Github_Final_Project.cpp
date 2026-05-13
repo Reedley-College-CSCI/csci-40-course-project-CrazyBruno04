@@ -13,6 +13,16 @@
 #include <string>
 #include <fstream>
 
+using namespace std;
+
+// Character Background
+string name;
+string race;
+string characterClass;
+string background;
+
+
+
 int main() {
     return 0;
 }
