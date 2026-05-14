@@ -16,25 +16,40 @@
 using namespace std;
 
 // Character Background
-string name;
-string race;
-string characterClass;
-string background;
+struct CharacterBackground
+{
+    string name;
+    string race;
+    string characterClass;
+    string background;
+};
 
 // Character Stats
-int strength;
-int intelligence;
-int dexterity;
-int wisdom;
-int constitution;
-int charisma;
-int experiencePoints;
-int level;
+struct CharacterStats
+{
+    int strength;
+    int intelligence;
+    int dexterity;
+    int wisdom;
+    int constitution;
+    int charisma;
+    int experiencePoints;
+    int level;
+};
 
 // Inventory
-string itemName;
-int itemQuantity;
+struct Inventory
+{
+    string itemName;
+    int itemQuantity;
+};
 
+struct Character
+{
+    CharacterBackground;
+    CharacterStats;
+    Inventory;
+};
 // Character Inputs
 int main() {
     cout << "Greeting User and welcome the the Character Tracker!" << endl;
