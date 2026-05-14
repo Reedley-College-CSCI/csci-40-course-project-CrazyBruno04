@@ -74,11 +74,11 @@ int main() {
     cout << "Experience Points: " << endl;
     cin >> experiencePoints;
 
-    level = experiencePoints / 1000;
+    level = (experiencePoints / 1000) + 1;
 
     // Inventory
     cout << "Enter an item to add to your inventory: " << endl;
-    cin >> itemName;
+    getline(cin >> ws, itemName);
 
     cout << "Enter the quantity of " << itemName << " to add: ";
     cin >> itemQuantity;
@@ -90,8 +90,8 @@ int main() {
     cout << "Name: " << name << endl;
     cout << "Race: " << race << endl;
     cout << "Class: " << characterClass << endl;
-    cout << "Background" << background << endl;
-    cout << "Strenth " << strength << endl;
+    cout << "Background: " << background << endl;
+    cout << "Strength: " << strength << endl;
     cout << "Intelligence: " << intelligence << endl;
     cout << "Dexterity: " << dexterity << endl;
     cout << "Wisdom: " << wisdom << endl;
@@ -101,6 +101,6 @@ int main() {
     cout << "Level: " << level << endl;
 
     // Inventory Summary
-    cout << "Inventory: " << itemName << " x" << quantity << endl;
+    cout << "Inventory: " << itemName << " x" << itemQuantity << endl;
     return 0;
 }
