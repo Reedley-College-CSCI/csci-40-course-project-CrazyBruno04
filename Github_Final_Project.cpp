@@ -31,7 +31,51 @@ int charisma;
 int experiencePoints;
 int level;
 
+// Inventory
+string itemName;
+int itemQuantity;
 
+// Character Inputs
 int main() {
+    cout << "Greeting User and welcome the the Character Tracker!" << endl;
+
+    cout << "Please enter your character's name: " << endl;
+    getline(cin, name);
+
+    cout << "Enter your character's race: " << endl;
+    getline(cin, race);
+
+    cout << "Enter your character's class: " << endl;
+    getline(cin, characterClass);
+
+    cout << "Enter your character's background: " << endl;
+	getline(cin, background);
+
+    cout << "Enter your character's stats: " << endl;
+
+    cout << "Strength: " << endl;
+    cin >> strength; 
+
+    cout << "Intelligence: " << endl;
+    cin >> intelligence;
+
+    cout << "Dexterity: " << endl;
+    cin >> dexterity;
+
+    cout << "Wisdom: " << endl;
+    cin >> wisdom;
+
+    cout << "Constitution: " << endl;
+    cin >> constitution;
+
+    cout << "Charisma: " << endl;
+    cin >> charisma;
+
+    cout << "Experience Points: " << endl;
+    cin >> experiencePoints;
+
+    level = experiencePoints / 1000;
+
+
     return 0;
 }
