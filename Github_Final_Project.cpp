@@ -76,6 +76,12 @@ int main() {
 
     level = experiencePoints / 1000;
 
+    // Inventory
+    cout << "Enter an item to add to your inventory: " << endl;
+    cin >> itemName;
+
+    cout << "Enter the quantity of " << itemName << " to add: ";
+    cin >> itemQuantity;
 
     return 0;
 }
