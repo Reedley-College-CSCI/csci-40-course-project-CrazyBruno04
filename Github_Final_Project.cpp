@@ -83,5 +83,24 @@ int main() {
     cout << "Enter the quantity of " << itemName << " to add: ";
     cin >> itemQuantity;
 
+    // Create a loop to allow multiple items
+
+    // Character Summary
+    cout << "\n==== Character Summary ====\n";
+    cout << "Name: " << name << endl;
+    cout << "Race: " << race << endl;
+    cout << "Class: " << characterClass << endl;
+    cout << "Background" << background << endl;
+    cout << "Strenth " << strength << endl;
+    cout << "Intelligence: " << intelligence << endl;
+    cout << "Dexterity: " << dexterity << endl;
+    cout << "Wisdom: " << wisdom << endl;
+    cout << "Constitution: " << constitution << endl;
+    cout << "Charisma:" << charisma << endl;
+    cout << "Experience Points: " << experiencePoints << endl;
+    cout << "Level: " << level << endl;
+
+    // Inventory Summary
+    cout << "Inventory: " << itemName << " x" << quantity << endl;
     return 0;
 }
