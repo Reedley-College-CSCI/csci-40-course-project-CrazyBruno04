@@ -1,5 +1,5 @@
 // CSCI-40 Final Project
-// Author: [Bruno Ochoa]
+// Author: [Bruno Ochoa] 
 
 /*
  * Description: My project is a character tracker for Dungeons and Dragons or simply for character creation.
