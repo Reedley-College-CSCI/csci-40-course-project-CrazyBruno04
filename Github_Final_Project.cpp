@@ -38,17 +38,17 @@ struct CharacterStats
 };
 
 // Inventory
-struct CharacterInventory
+struct InventoryItems
 {
     string itemName;
     int itemQuantity;
 };
 
 // Inventory Limit
-struct InventoryLimit
+struct CharacterInventory
 {
-    CharacterInventory items[20];
-    int inventoryCount;
+    InventoryItems items[20];
+    int itemCount;
 };
 
 struct Character
@@ -58,8 +58,7 @@ struct Character
     CharacterInventory inventory;
 };
 // Character Inputs
-int main() {
-    Character user;
+void createCharacter(Character& user) {
     cout << "Greeting User and welcome the the Character Tracker!" << endl;
 
     cout << "Please enter your character's name: " << endl;
@@ -72,12 +71,12 @@ int main() {
     getline(cin, user.background.characterClass);
 
     cout << "Enter your character's background: " << endl;
-	getline(cin, user.background.characterBackground);
+    getline(cin, user.background.characterBackground);
 
     cout << "Enter your character's stats: " << endl;
 
     cout << "Strength: " << endl;
-    cin >> user.stats.strength; 
+    cin >> user.stats.strength;
 
     cout << "Intelligence: " << endl;
     cin >> user.stats.intelligence;
@@ -99,15 +98,33 @@ int main() {
 
     user.stats.level = (user.stats.experiencePoints / 1000) + 1;
 
+}
+
+void addInventoryLimit(Character& user) 
+{
     // Inventory
+    char choice;
+    
+    do
+    {
+    int i = user.inventory.itemCount;
+
     cout << "Enter an item to add to your inventory: " << endl;
-    getline(cin >> ws, user.inventory.itemName);
 
-    cout << "Enter the quantity of " << user.inventory.itemName << " to add: ";
-    cin >> user.inventory.itemQuantity;
+    getline(cin >> ws, user.inventory.items[i].itemName);
 
-    // Create a loop to allow multiple items
+    cout << "Enter the quantity: " << user.inventory.items[i].itemQuantity;
+    cin >> user.inventory.items[i].itemQuantity;
 
+    user.inventory.itemCount++;
+
+    cout << "Add another item? (y/n): " << endl;
+    cin >> choice;
+
+} while (choice == 'y' || choice == 'Y');
+}
+
+void displayCharacter(const Character& user) {
     // Character Summary
     cout << "\n==== Character Summary ====\n";
     cout << "Name: " << user.background.name << endl;
@@ -124,6 +141,26 @@ int main() {
     cout << "Level: " << user.stats.level << endl;
 
     // Inventory Summary
-    cout << "Inventory: " << user.inventory.itemName << " x" << user.inventory.itemQuantity << endl;
+    cout << "Inventory: ";
+
+    for (int i = 0; i < user.inventory.itemCount; i++) {
+       cout << user.inventory.items[i].itemName << " x" << user.inventory.items[i].itemQuantity << endl;
+
+    }
+       
+
+}
+
+int main() {
+    Character user;
+   
+    user.inventory.itemCount = 0;
+
+    createCharacter(user);
+
+    addInventoryLimit(user);
+
+    displayCharacter(user);
+   
     return 0;
 }
