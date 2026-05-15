@@ -44,6 +44,13 @@ struct CharacterInventory
     int itemQuantity;
 };
 
+// Inventory Limit
+struct InventoryLimit
+{
+    CharacterInventory items[20];
+    int inventoryCount;
+};
+
 struct Character
 {
     CharacterBackground background;
@@ -112,7 +119,7 @@ int main() {
     cout << "Dexterity: " << user.stats.dexterity << endl;
     cout << "Wisdom: " << user.stats.wisdom << endl;
     cout << "Constitution: " << user.stats.constitution << endl;
-    cout << "Charisma:" << user.stats.charisma << endl;
+    cout << "Charisma: " << user.stats.charisma << endl;
     cout << "Experience Points: " << user.stats.experiencePoints << endl;
     cout << "Level: " << user.stats.level << endl;
 
