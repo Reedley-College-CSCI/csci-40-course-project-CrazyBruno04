@@ -21,7 +21,7 @@ struct CharacterBackground
     string name;
     string race;
     string characterClass;
-    string background;
+    string characterBackground;
 };
 
 // Character Stats
@@ -38,7 +38,7 @@ struct CharacterStats
 };
 
 // Inventory
-struct Inventory
+struct CharacterInventory
 {
     string itemName;
     int itemQuantity;
@@ -46,76 +46,77 @@ struct Inventory
 
 struct Character
 {
-    CharacterBackground;
-    CharacterStats;
-    Inventory;
+    CharacterBackground background;
+    CharacterStats stats;
+    CharacterInventory inventory;
 };
 // Character Inputs
 int main() {
+    Character user;
     cout << "Greeting User and welcome the the Character Tracker!" << endl;
 
     cout << "Please enter your character's name: " << endl;
-    getline(cin, name);
+    getline(cin, user.background.name);
 
     cout << "Enter your character's race: " << endl;
-    getline(cin, race);
+    getline(cin, user.background.race);
 
     cout << "Enter your character's class: " << endl;
-    getline(cin, characterClass);
+    getline(cin, user.background.characterClass);
 
     cout << "Enter your character's background: " << endl;
-	getline(cin, background);
+	getline(cin, user.background.characterBackground);
 
     cout << "Enter your character's stats: " << endl;
 
     cout << "Strength: " << endl;
-    cin >> strength; 
+    cin >> user.stats.strength; 
 
     cout << "Intelligence: " << endl;
-    cin >> intelligence;
+    cin >> user.stats.intelligence;
 
     cout << "Dexterity: " << endl;
-    cin >> dexterity;
+    cin >> user.stats.dexterity;
 
     cout << "Wisdom: " << endl;
-    cin >> wisdom;
+    cin >> user.stats.wisdom;
 
     cout << "Constitution: " << endl;
-    cin >> constitution;
+    cin >> user.stats.constitution;
 
     cout << "Charisma: " << endl;
-    cin >> charisma;
+    cin >> user.stats.charisma;
 
     cout << "Experience Points: " << endl;
-    cin >> experiencePoints;
+    cin >> user.stats.experiencePoints;
 
-    level = (experiencePoints / 1000) + 1;
+    user.stats.level = (user.stats.experiencePoints / 1000) + 1;
 
     // Inventory
     cout << "Enter an item to add to your inventory: " << endl;
-    getline(cin >> ws, itemName);
+    getline(cin >> ws, user.inventory.itemName);
 
-    cout << "Enter the quantity of " << itemName << " to add: ";
-    cin >> itemQuantity;
+    cout << "Enter the quantity of " << user.inventory.itemName << " to add: ";
+    cin >> user.inventory.itemQuantity;
 
     // Create a loop to allow multiple items
 
     // Character Summary
     cout << "\n==== Character Summary ====\n";
-    cout << "Name: " << name << endl;
-    cout << "Race: " << race << endl;
-    cout << "Class: " << characterClass << endl;
-    cout << "Background: " << background << endl;
-    cout << "Strength: " << strength << endl;
-    cout << "Intelligence: " << intelligence << endl;
-    cout << "Dexterity: " << dexterity << endl;
-    cout << "Wisdom: " << wisdom << endl;
-    cout << "Constitution: " << constitution << endl;
-    cout << "Charisma:" << charisma << endl;
-    cout << "Experience Points: " << experiencePoints << endl;
-    cout << "Level: " << level << endl;
+    cout << "Name: " << user.background.name << endl;
+    cout << "Race: " << user.background.race << endl;
+    cout << "Class: " << user.background.characterClass << endl;
+    cout << "Background: " << user.background.characterBackground << endl;
+    cout << "Strength: " << user.stats.strength << endl;
+    cout << "Intelligence: " << user.stats.intelligence << endl;
+    cout << "Dexterity: " << user.stats.dexterity << endl;
+    cout << "Wisdom: " << user.stats.wisdom << endl;
+    cout << "Constitution: " << user.stats.constitution << endl;
+    cout << "Charisma:" << user.stats.charisma << endl;
+    cout << "Experience Points: " << user.stats.experiencePoints << endl;
+    cout << "Level: " << user.stats.level << endl;
 
     // Inventory Summary
-    cout << "Inventory: " << itemName << " x" << itemQuantity << endl;
+    cout << "Inventory: " << user.inventory.itemName << " x" << user.inventory.itemQuantity << endl;
     return 0;
 }
